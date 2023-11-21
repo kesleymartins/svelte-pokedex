@@ -15,9 +15,11 @@ Uma pokedex feita com svelte e [PokeApi](https://pokeapi.co/). estilizada com SA
 #### Configuração do projeto
 ---
 ```bash
-# instalar dependências
+# Install dependencies
 npm i
 
-# executar projeto
+# run server
 npm run dev
+
+# open url http://localhost:5173
 ```
