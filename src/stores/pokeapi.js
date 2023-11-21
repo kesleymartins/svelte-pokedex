@@ -7,7 +7,7 @@ export const pagination = writable({
   next: '',
 })
 
-const getPokemon = async ({name, url}) => {
+const getPokemon = async ({ name, url }) => {
   const response = await axios.get(url)
 
   return {
@@ -21,7 +21,7 @@ const getPokemon = async ({name, url}) => {
 
 export const loadPokemons = async () => {
   const response = await axios.get('/pokemon?limit=12')
-  
+
   pokemons.set(response.data.results.map(pokeInfo => {
     return getPokemon(pokeInfo)
   }))
@@ -32,7 +32,7 @@ export const loadPokemons = async () => {
   })
 }
 
-export const nextPage = async (url="") => {
+export const nextPage = async (url = "") => {
   const response = await axios.get(url)
 
   pokemons.set(response.data.results.map(pokeInfo => {
@@ -45,7 +45,7 @@ export const nextPage = async (url="") => {
   })
 }
 
-export const previousPage = async (url="") => {
+export const previousPage = async (url = "") => {
   const response = await axios.get(url)
 
   pokemons.set(response.data.results.map(pokeInfo => {
